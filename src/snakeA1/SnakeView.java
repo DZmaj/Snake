@@ -19,6 +19,7 @@ public class SnakeView extends JFrame{
 		
 		pack();
 		
+		
 		//setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -26,4 +27,6 @@ public class SnakeView extends JFrame{
 	public SnakePanel getPanel(){
 		return s;
 	}
+	
+	
 }

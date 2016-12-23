@@ -18,6 +18,7 @@ public class SnakeGame {
 		this.view = new SnakeView();
 		this.controller = new SnakeController(this.view, this.model);
 		this.view.addKeyListener(this.controller);
+		this.view.addComponentListener(new ResizeListener(this.view));
 		//this.model.addObserver(this.view);
 	}
 }
