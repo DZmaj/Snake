@@ -19,8 +19,8 @@ public class SnakePanel extends JPanel implements Runnable{
 	private Food food;
 	
 	
-	private int x = 10, y = 10, size = 30;
-	private boolean right = true, left = false, up = false, down = false;
+	private int x = 10, y = 10, size = 10;
+	private boolean right = false, left = false, up = false, down = false;
 	public SnakePanel(){
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
@@ -55,19 +55,10 @@ public class SnakePanel extends JPanel implements Runnable{
 			y = 0;
 		}
 		
-		//set max size, size increases as you eat
-		
-		if (snake.size() > size){
-			for (int i = size; i < snake.size(); i++){
-				snake.remove(0);
-			}
-		}
-		
-		/*
+		//set max size
 		if (snake.size() > size){
 			snake.remove(0);
 		}
-		*/
 		
 		
 		for (int i = 0; i < snake.size(); i++){
@@ -80,18 +71,8 @@ public class SnakePanel extends JPanel implements Runnable{
 				food = new Food();
 			}
 		}
-<<<<<<< HEAD
-=======
-		
-		for (int j = 1; j < snake.size(); j++){
-			if (snake.get(0).getX() == snake.get(j).getX() && snake.get(0).getY() == snake.get(j).getY()){
-				size = size - (size - j);
-				System.out.println("collision" + size);
-			}
-		}
->>>>>>> Collision
 	}
-
+	
 	public void paint(Graphics g){
 		// this line deletes everything then redraws
 		super.paintComponent(g);
@@ -116,19 +97,15 @@ public class SnakePanel extends JPanel implements Runnable{
 	}
 
 	public void setLeft() {
-		if (!right){
-			left = true;
-			right = false;
-		}
+		left = true;
+		right = false;
 		up = false;
 		down = false;
 	}
 	
 	public void setRight() {
-		if (!left){
-			left = false;
-			right = true;
-		}
+		left = false;
+		right = true;
 		up = false;
 		down = false;
 	}
@@ -136,19 +113,15 @@ public class SnakePanel extends JPanel implements Runnable{
 	public void setUp() {
 		left = false;
 		right = false;
-		if (!down){
-			up = true;
-			down = false;
-		}
+		up = true;
+		down = false;
 	}
 	
 	public void setDown() {
 		left = false;
 		right = false;
-		if (!up){
-			up = false;
-			down = true;
-		}
+		up = false;
+		down = true;
 	}
 
 	public void changeDimensions(Dimension newSize) {
