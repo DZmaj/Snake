@@ -70,27 +70,7 @@ public class SnakePanel extends JPanel implements Runnable{
 				size++;
 				food = new Food();
 			}
-			
-			//collision with self
-			/*
-			for (int j = i+1; j < snake.size(); j++){
-				if (snake.get(i).getX() == snake.get(j).getX() && snake.get(i).getY() == snake.get(j).getY()){
-					for (int k = j; k < snake.size(); k++){
-						snake.remove(k);
-					}
-				}
-			}
-			
-			
-			if (i != 0 && i != 1 && snake.get(0).getX() == snake.get(i).getX() && snake.get(0).getY() == snake.get(i).getY()){
-				for (int k = i; k < snake.size(); k++){
-					//snake.remove(k);
-					//size--;
-				}
-			}
-			*/
 		}
-
 	}
 	
 	public void paint(Graphics g){
